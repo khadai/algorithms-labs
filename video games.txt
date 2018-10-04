@@ -1,0 +1,12 @@
+Call of Duty,5,5.6
+Life is Strange,7,9.8,
+The Walking Dead,23,8.7,
+Outlast,3,6.9,
+Outlast 2,4,7.7,
+GTA 5,5,5.5,
+Far Cry 5,14,1.5,
+Saints Row,4,4.3,
+Half-Life,16,10.0,
+Mirror's Edge Catalyst,10,2.3,
+Assassin's Creed,13,3.5,
+S.T.A.L.K.E.R,1,9.9
