@@ -36,14 +36,11 @@ def inc_swaps():
     merge_swap += 1
 
 
-def print_globals():
-    print("COMPARED " + str(merge_compare) + " TIMES," + "SWAPPED " + str(merge_swap) + ' TIMES')
-
-
 def merge_sort(array):  # by_heroes_by_ascending
     if len(array) == 0 or len(array) == 1:
         return array
     else:
+        # split in the middle
         middle = len(array) // 2
         left = merge_sort(array[:middle])
         right = merge_sort(array[middle:])
@@ -65,8 +62,8 @@ def merge(left, right):
             new_array.append(right[r_idx])
             r_idx += 1
             inc_swaps()
-    inc_compare()
-    inc_compare()
+        inc_compare()
+        inc_compare()
     new_array.extend(left[l_idx:])
     new_array.extend(right[r_idx:])
     return new_array
@@ -85,13 +82,13 @@ if __name__ == '__main__':
         video_game = VideoGame(values[0], int(values[1]), float(values[2]))
         video_games_list.append(video_game)
 
-    print("BUBBLE SORT")  # by_rate_by_descending
-    start_time = time.process_time()
+    print("BUBBLE SORT  by rate by descending")  # by_rate_by_descending
+    start_time = time.time()
     print_list(bubble_sort(video_games_list))
-    print("TIME: " + str(time.process_time() - start_time))
+    print("TIME: " + str(time.time() - start_time))
 
-    print("\nMERGE SORT")  # by_heroes_by_ascending
+    print("\nMERGE SORT by heroes by ascending")  # by_heroes_by_ascending
     start_time = time.time()
     print_list(merge_sort(video_games_list))
     print("TIME: " + str(time.time() - start_time))
-    print_globals()
+    print("COMPARED " + str(merge_compare) + " TIMES," + "SWAPPED " + str(merge_swap) + ' TIMES')
