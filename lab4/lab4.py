@@ -10,15 +10,16 @@ def read_graph(file_in):
     num_of_friends = []
 
     for i in range(0, length):
-        num = 0
+        num = set()
         for j in range(0, length):
             if matrix[i][j] == 'Y':
+                num.add(j)
                 for row in range(0, length):
                     if matrix[row][j] == 'Y':
-                        num = num + 1
-                num = num - 1
-        num_of_friends.append(num)
-
+                        num.add(row)
+                num.remove(i)
+        num_of_friends.append(num.__len__())
+    print(num_of_friends)
     return max(num_of_friends)
 
 
